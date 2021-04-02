@@ -1,6 +1,11 @@
 language: node_js
 node_js:
     - 10
+
+cache:
+  directories:
+    - node_modules
+
 install:
     - yarn
 script:
@@ -12,4 +17,4 @@ after_success:
     - git config --global user.email "${U_EMAIL}"
     - git add -A
     - git commit -m 'deploy'
-    - git push --quiet --force "https://${GITHUB_TOKEN}@${GH_REF}" master:${P_BRANCH}
+    - git push --quiet --force "https://${GITHUB_TOKEN}@${CH_REF}" master:${P_BRANCH}
