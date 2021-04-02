@@ -1,0 +1,30 @@
+{
+  "name": "chess-yu-blog",
+  "version": "1.0.0",
+  "description": "blog",
+  "main": "index.js",
+  "repository": "https://github.com/chessyu/chessyu.github.io",
+  "author": "chessyu",
+  "license": "MIT",
+  "scripts": {
+    "serve": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "start": "nodemon --ext md,vue --watch .vuepress --watch . --exec vuepress dev docs"
+  },
+  "dependencies": {
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "^1.5.7",
+    "@vuepress/plugin-medium-zoom": "1.0.0-alpha.0",
+    "@vuepress/plugin-pwa": "1.0.0-alpha.3",
+    "vuepress": "1.0.3",
+    "vuepress-plugin-flowchart": "^1.4.3",
+    "vuepress-theme-reco": "1.0.8-alpha.3"
+  },
+  "devDependencies": {
+    "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
+    "@vuepress-reco/vuepress-plugin-loading-page": "^1.4.0",
+    "nodemon": "^2.0.4",
+    "vuepress-plugin-cursor-effects": "0.0.4",
+    "vuepress-plugin-dynamic-title": "0.0.5",
+    "vuepress-plugin-meting": "^0.2.3"
+  }
+}
