@@ -33,7 +33,7 @@ module.exports = {
       {
         theme: ["blackCat"],
         clean: true,
-        height:250,
+        height:260,
         modelStyle: {
           position: "fixed",
           right: "0px",
@@ -60,7 +60,7 @@ module.exports = {
       {
         showIcon: "/favicon.ico",
         showText: "(/≧▽≦/)老板好！",
-        hideIcon: "/failure.ico",
+        hideIcon: "/favicon.ico",
         hideText: "(●—●)快快回来！",
         recoverTime: 2000
       }
@@ -73,12 +73,12 @@ module.exports = {
     //   }
     // }],
     ['@vuepress-reco/vuepress-plugin-bulletin-popover', {
-      // width: '300px', // 默认 260px
+      width: '300px', // 默认 260px
       title: '微信号:chessyu_',
       body: [
         {
-          type: 'title',
-          content: '一直在关注新的工作机会，有内推资源的老铁',
+          type: 'text',
+          content: `随手笔记，欢迎指点 🎉🎉🎉`,
           style: 'text-aligin: center;'
         },
         // {

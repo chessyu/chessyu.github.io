@@ -2,7 +2,6 @@ module.exports = {
   type: 'blog',
   fullscreen: true,
   mode: 'light',
-  authorAvatar: '/header.jpg',
   logo: '/logo.png',
   // 博客设置
   blogConfig: {

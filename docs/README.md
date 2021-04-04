@@ -2,9 +2,9 @@
 home: true
 bgImage: '/bannerW.webp'
 bgImageStyle: {
-  height: '450px'
+  height: '480px'
 }
-faceImage: '/avatar.jpg'
+faceImage: '/header.jpg'
 heroImage: /avatar.jpg
 heroImageStyle: {
   maxHeight: '200px',
