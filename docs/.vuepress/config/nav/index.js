@@ -1,14 +1,13 @@
 module.exports = [
   { text: '首页', link: '/', icon: 'reco-home' },
-  // { text: '简历', link: 'http://chessyu.club:8081/', icon: 'reco-blog' },
-  // { text: '项目经验', 
-  //   icon: 'reco-api',
-  //   items: [
-  //     { text: 'vue电商管理系统', link: 'http://chessyu.club:8082/', icon: 'reco-api' },
-  //     { text: 'vue小米移动端', link: 'http://chessyu.club:8083/', icon: 'reco-api' },
-  //   ]
-  // },
   { text: '时间轴', link: '/timeline/', icon: 'reco-date' },
+  { text: '项目经验', 
+    icon: 'reco-api',
+    items: [
+      { text: '微前端-管理平台', link: 'http://120.79.143.23:2001', icon: 'reco-api' },
+      { text: 'UI-组件', link: 'https://www.npmjs.com/package/public-component-ui/', icon: 'reco-npm' },
+    ]
+  },
   { text: '关于我', 
     icon: 'reco-message',
     items: [
