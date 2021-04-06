@@ -2,7 +2,7 @@ const themeConfig = require('./config/theme/')
 
 module.exports = {
   base: '/',
-  title: "来自底层的前端",
+  title: "默默无闻的前端选手",
   description: '学习、归纳、总结、实践',
   dest: 'docs/.vuepress/dist',
   head: [
