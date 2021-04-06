@@ -15,85 +15,28 @@ sidebar: false
 :::
 
 
-# 创建github工程
-### 创建一个 username.github.io  的仓库，username是你github的名称
+# 站在巨人的肩膀上
+## 提供三个优秀的参考链接，第三个是自定义域名，根据自己需求选看，最后给一波总结，我踩的坑及解决方案
 
-https://username.github.io/blog访问到的只能是master分支的内容，这会带出一个很棘手的问题：“为何我什么都配置了，最后只能显示master代码分支的README.md文件，不是预期的gh-pages分支里的静态文件?”。
+- 从零搭建 `vuepress` 项目及使用 `vuepress-theme-reco` 主题，参考[VuePress博客美化之reco主题](https://www.cnblogs.com/glassysky/p/13387739.html)
 
-解决的办法也有，那就是顺着它的思路，使用mater分支当做build后静态资源存放的分支，代码分支放到别处去。参考[拯救懒癌文档君 - VuePress + Travis CI + Github Pages 自动线上生成文档](https://juejin.im/post/5d0715f6f265da1ba56b1e01)
+- 将项目代码提交到 github 仓库后，配置 `travis CI`步骤，参考[拯救懒癌文档君 - VuePress + Travis CI + Github Pages 自动线上生成文档](https://juejin.im/post/5d0715f6f265da1ba56b1e01)
 
-# 根据vuepress-theme-reco创建出vuepress工程（qiuzhongrun老哥的教程）
-1. 下载空github工程
-``` sh
-# 注意你clone你自己的路径哈，下面这个是我的举例
-git clone https://github.com/qiuzhongrun/blog.git
+- 自定义 github pages 域名的文章 参考[GitHub Pages自定义域名](https://juejin.im/post/6844903558106578957)，根据自己的需求选择。
 
-# 进入工程
-cd blog
-```
-2. 初始化vuepress工程
-在主题的[Github地址](https://github.com/vuepress-reco/vuepress-theme-reco)有很清晰的初始化方式，下面贴出我的。
-``` sh
-# 添加theme-cli工具
-yarn global add @vuepress-reco/theme-cli
+前两个链接大致看了一遍后，再动手来创建项目与集成 travis CI .
 
-# 请注意这里的 . 意思是当前blog目录下
-theme-cli init .
+## 踩中的坑
+- 仓库名写错，请严格按照 `[githubname].github.io` 来创建仓库， githubname 就是你的 github 名称 如图
 
-# install 
-yarn install
+![](https://chessyu.github.io/help-B.png)
 
-# run
-yarn dev
+- 在 travis CI 中修改项目配置项时，需要添加自定义的变量名时，需要与项目根目录下的 `travis.yml` 里的变量名称一致，最好对照着检查下名称时否一致。以免编译通过后，访问 github pages 时显示 404。
 
-# build
-yarn build
-```
-在theme-cli工具init一个工程的时候，会让你选style，我选了afternoon-grocery，会带来很多已存在的文章，但是也给了很多我参考，后续删除即可。
-``` sh
-? What's the title of your project? blog
-? What's the description of your project? 个人博客
-? What's the author's name? Qiu Zhongrun
-? What style do you want your home page to be?(Select afternoon-grocery, if you want to download chessyu's '午后南杂')
-  blog
-  doc
-❯ afternoon-grocery
-```
-3. 修正偏差
-①添加base
-②修改title
-③修正dest目标路径为docs/.vuepress/dist
-``` javascript
-module.exports = {
-  base: '/blog/', # ①添加base, 为了后面访问的时候有上下文，没有这玩意儿，你访问就会出问题
-  title: "欢迎你，这是我的博客！", # ②修改title，自己看着办哈
-  description: 'Enjoy when you can, and endure when you must.',
-  dest: 'docs/.vuepress/dist', # ③修正dest目标路径为docs/.vuepress/dist，这个必须和稍后的自动部署的local_dir保持一致
-  head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
-  ],
-  theme: 'reco',
-  themeConfig,
-  markdown: {
-    lineNumbers: true
-  },
-  plugins: ['@vuepress/medium-zoom', 'flowchart'] 
-} 
-```
+![](https://chessyu.github.io/travis-ci.png)
 
-# travis-ci部署
-参考这里的[自动部署](https://juejin.im/post/5d0715f6f265da1ba56b1e01)，这里不展开讲，只讲一些注意点。
-1. build命令里面写的是`npm run build`，如果你看着不顺眼，可以修改为`yarn build`意思是一个意思。
-2. 设置token的时候，除了delete repo的权限不给，其他都给上吧。
-3. 授权travis-ci Manage repositories on GitHub的时候，不要全选，就选你要的就行
-4. 要在https://github.com/qiuzhongrun/blog/settings，也就是你的github repository的Settings里修改Github Pages的Source为gh-pages，这个分支你可以自己建，也可以等第一次跑完travis-ci它自动创建好后再选。
+我当时配置时就踩过这两个坑，现在给出提示，按照步骤来一般是没有问题的。开启 github pages 后就已经完成所有配置，到此，只要push一次代码，就会触发travis-ci自动build，推送到指定分支(main)，然后你在https://chessyu.github.io就可以访问到了。最后注意一点 github 仓库下有两个分支，docs(源代码分支，设置成默认分支，用来提交源代码)，main(项目编译后的文件存放的分支，也就是 travis CI 提交代码的分支)。
 
-
-到此，只要push一次代码，就会触发travis-ci自动build，推送到指定分支(gh-pages)，然后你在https://qiuzhongrun.github.io/blog就可以访问到了。
-
-# 后记
-后续使用的时候，发现一些问题，这里也记录下来以供参考。
 
 ### 热部署Hot Reload
 没错，vuepress 1.x这个功能是有问题的，在这个[#issue](https://github.com/vuejs/vuepress/issues/1283)里有讲，至今未见关闭。
@@ -119,6 +62,6 @@ yarn start
 这个方案监控了.vue和.md文件的变动，会触发vuepress工程reload，浏览器刷新可见新内容。
 
 ## 参考文章
-
+- [VuePress博客美化之reco主题](https://www.cnblogs.com/glassysky/p/13387739.html)
 - [拯救懒癌文档君 - VuePress + Travis CI + Github Pages 自动线上生成文档](https://juejin.im/post/6844903869558816781)
 - [GitHub Pages自定义域名](https://juejin.im/post/6844903558106578957)
