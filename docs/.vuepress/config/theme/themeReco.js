@@ -1,7 +1,12 @@
+/*
+ * @Description: 
+ * @Author:  chessyu 
+ * @Date: 2021-07-19 11:33:21
+ */
 module.exports = {
   type: 'blog',
   fullscreen: true,
-  mode: 'light',
+  mode: 'auto',
   logo: '/logo.png',
   // 博客设置
   blogConfig: {

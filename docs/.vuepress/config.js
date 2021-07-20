@@ -2,7 +2,7 @@ const themeConfig = require('./config/theme/')
 
 module.exports = {
   base: '/',
-  title: "默默无闻的前端选手",
+  title: "前端笔记",
   description: '学习、归纳、总结、实践',
   dest: 'docs/.vuepress/dist',
   head: [
@@ -33,7 +33,7 @@ module.exports = {
       {
         theme: ["blackCat"],
         clean: true,
-        height:260,
+        height:300,
         modelStyle: {
           position: "fixed",
           right: "0px",
@@ -99,6 +99,7 @@ module.exports = {
       //   }
       // ]
     }],
+
     [
       'meting',
       {

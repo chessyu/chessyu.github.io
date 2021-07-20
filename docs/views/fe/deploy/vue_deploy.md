@@ -38,7 +38,7 @@ sidebar: false
 我当时配置时就踩过这两个坑，现在给出提示，按照步骤来一般是没有问题的。开启 github pages 后就已经完成所有配置，到此，只要push一次代码，就会触发travis-ci自动build，推送到指定分支(main)，然后你在https://chessyu.github.io就可以访问到了。最后注意一点 github 仓库下有两个分支，docs(源代码分支，设置成默认分支，用来提交源代码)，main(项目编译后的文件存放的分支，也就是 travis CI 提交代码的分支)。
 
 
-### 热部署Hot Reload
+## 热部署Hot Reload
 没错，vuepress 1.x这个功能是有问题的，在这个[#issue](https://github.com/vuejs/vuepress/issues/1283)里有讲，至今未见关闭。
 解决办法也有多人提出多种方案，我采用[pepsifan](https://github.com/pepsifan)提出的nodemon解决方案，亲测有效。
 下面是[pepsifan](https://github.com/pepsifan)的方案：
