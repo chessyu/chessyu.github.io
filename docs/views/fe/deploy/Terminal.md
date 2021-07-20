@@ -7,6 +7,9 @@ categories:
  - 工具
 sidebar: false
 ---
+## 下载 windows Terminal 工具
+   win10 在 Microsoft Store 应用商店里下载此工具。会有硬件的要求，看下载时的提示。
+   最新版本的配置要简单很多，都是可视化配置
 
 **下载完windows Terminal 后的初始界面是这个样的“傻大蓝”。**并没有像官方演示的那么美观（所以得自己捯饬捯饬好看的样子）<br />![](/1594371043402-54cbf8f0-6c5e-47a5-8afd-8720f7618ca7.webp)<br />**第一步安装相关的模块和PowerLine主题**
 ```
