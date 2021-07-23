@@ -1,3 +1,4 @@
+
 module.exports = [
   { text: '首页', link: '/', icon: 'reco-home' },
   { text: '时间轴', link: '/timeline/', icon: 'reco-date' },
@@ -6,6 +7,7 @@ module.exports = [
     items: [
       { text: '微前端-管理平台', link: 'http://120.79.143.23:2001', icon: 'reco-api' },
       { text: 'UI-组件', link: 'https://www.npmjs.com/package/public-component-ui/', icon: 'reco-npm' },
+      { text: '数据大屏', link: 'http://47.105.179.156/', icon:'reco-api'}
     ]
   },
   { text: '关于我', 

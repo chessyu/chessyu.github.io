@@ -33,8 +33,9 @@ module.exports = {
       {
         theme: ["blackCat"],
         clean: true,
-        height:300,
+        height:260,
         modelStyle: {
+          width:'100px',
           position: "fixed",
           right: "0px",
           bottom: "0px",
@@ -104,10 +105,7 @@ module.exports = {
       'meting',
       {
         meting: {
-          // server: "netease",
-          // type: "playlist",
-          // mid: "6689304703",
-          auto: 'https://music.163.com/#/playlist?id=6689304703'
+          auto: 'https://music.163.com/#/discover/toplist?id=21845217'
         },
         aplayer:{
           fixed: false ,   //默认是 false  是否开启吸底模式

@@ -33,7 +33,7 @@ module.exports = {
   // 备案号
   // record: '浙ICP备20018057号-2',
   // 项目开始时间
-  startYear: '2021',
+  startYear: '2020',
   search: true,
   searchMaxSuggestions: 10,
 }

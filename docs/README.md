@@ -1,8 +1,8 @@
 ---
 home: true
-bgImage: '/bannerW.webp'
+bgImage: '/bgk_2.png'
 bgImageStyle: {
-  height: '480px'
+  height: '780px'
 }
 faceImage: '/header.jpg'
 heroImage: /avatar.jpg
