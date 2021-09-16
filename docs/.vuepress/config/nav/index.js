@@ -5,9 +5,10 @@ module.exports = [
   { text: '项目经验', 
     icon: 'reco-api',
     items: [
-      { text: '微前端-管理平台', link: 'http://120.79.143.23:2001', icon: 'reco-api' },
-      { text: 'UI-组件', link: 'https://www.npmjs.com/package/public-component-ui/', icon: 'reco-npm' },
-      { text: '数据大屏', link: 'http://47.105.179.156/', icon:'reco-api'}
+      { text: '数据大屏', link: 'https://chessyu.github.io/big-screen/', icon:'reco-api'},
+      { text: 'UI-组件', link: 'https://www.npmjs.com/package/public-components-ui/', icon: 'reco-npm' },
+      { text: 'Node Cli', link: 'https://www.npmjs.com/package/public-tools-cli', icon: 'reco-npm' },
+
     ]
   },
   { text: '关于我', 
